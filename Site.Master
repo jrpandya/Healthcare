@@ -1,0 +1,253 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Masterproject.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Healthcare</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        body{
+            background-image:url('Image/cover.jpg');
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+      
+        #head12{
+             font-size:20px;
+                }
+
+       #footer1{
+           padding-top:   0px;
+           font-size:15px;
+       }
+    
+        footer {
+             background-color: #343a40;
+             color: #fff;
+              padding: 50px 0;
+                }
+
+        #icon1{
+            background-color:;
+        }
+
+        .social1{
+        display: inline-block;
+        border-radius: 10px;
+        transition: 0.2s ease-in-out;
+        color: white;
+        font-size: 30px;
+        margin: 20px;
+        
+    }
+    
+
+        .container {
+    width: 100%;
+    margin:0 auto;
+                    }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-4 {
+    flex: 0 0 25.33%;
+    max-width: 23.33%;
+    padding: 0 10px;
+}
+
+h3 {
+    font-size:20px;
+}
+
+p {
+    
+
+    }
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#copyright{
+     margin-bottom:-50px;
+}
+
+        .book-appointment-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background: linear-gradient(45deg, #9b59b6, #3498db);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top:100px;
+        }
+
+        .book-appointment-btn:hover {
+            background: linear-gradient(45deg, #3498db, #9b59b6);
+            color:white;
+         }
+
+    </style>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+
+         <!-- Just an image -->
+<nav class="navbar navbar-light bg-dark">
+  <div class="container" id="logo1">
+    <a class="navbar-brand" href="/Default">
+      <img src="Image/logo.jpg" height="60" alt="MDB Logo"
+        loading="lazy" style="border-radius:20%;" />
+    </a>
+  </div>
+</nav>
+                  <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+               <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between" id="head12">
+             <ul class="navbar-nav flex-grow-1">
+             <li class="nav-item"><a class="nav-link" runat="server" href="~/Default">Home</a></li>
+             <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li>
+             <li class="nav-item"><a class="nav-link" runat="server" href="~/Services">Services</a></li>
+             <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
+             </ul>
+        </div>
+
+        </nav>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+           <!-- Footer -->
+        
+        </div>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+    <!-- Your existing content goes here -->
+
+    <footer class="bg-body-tertiary text-center" id="footer1">
+    <div class="container">
+        <section class="mb-4">
+      <!-- Facebook -->
+       <a href="https://www.facebook.com/groups/healthcare.professional/?ref=share&mibextid=NSMWBT"  class="social1"><i class="bi bi-facebook"></i></a>
+
+      <!-- Twitter -->
+      <a href="https://x.com/modrnhealthcr?t=9MhIg7gWXvdJ-fu8l8w31A&s=08"  class="social1"><i class="bi bi-twitter-x"></i></a>
+
+      <!-- Google -->
+      <a href="https://www.healthcare.com/"  class="social1"><i class="bi bi-google"></i></a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/healthis_care?igsh=MXJvbm53bmlqNmR6OA=="  class="social1"><i class="bi bi-instagram"></i></a>
+
+      <!-- Linkedin -->
+      <a href="https://www.linkedin.com/company/healthcare-com/"  class="social1"><i class="bi bi-linkedin"></i></a>
+
+    </section>
+    <!-- Section: Social media -->
+
+        <div class="row">
+            <div class="col-md-4">
+                <h3>About Us</h3>
+                <p>
+                    Access and Equity,Quality and Innovation,Affordability and Cost Containment,The Future of Healthcare,Conclusion.
+
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="Default.aspx">Home</a></li>
+                    <li><a href="About.aspx">About</a></li>
+                    <li><a href="Services.aspx">Services</a></li>
+                    <li><a href="Contact.aspx">Contact</a></li>
+                </ul>
+            </div>
+             <div class="col-md-4">
+                <h3>Other Links</h3>
+                 <ul>
+                  <li><a href="https://health.economictimes.indiatimes.com/events" >Events</a></li>
+                  <li><a href="https://en.wikipedia.org/wiki/Health_education" >Education</a></li>
+                  <li><a href="https://www.drishtiias.com/blog/healthcare-policies-and-their-implications-on-Doctors%20and%20Patients">Privacy Policy</a></li>
+                 </ul>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="bi bi-geo-alt-fill"></i>Dr.Subhash Ayurvedic And General Healthcare, Junagadh, India</p>
+              <p>
+                 <i class="bi bi-envelope-at-fill"></i>
+                     Healthcarecenter.com
+               </p>
+                 <p><i class="bi bi-telephone-fill"></i> + 01 234 567 88</p>
+                    <a href="Contact.aspx" style="color: #ccc; text-decoration: none;color: #fff;text-decoration: underline;">details</a>
+
+             </div>
+        </div>
+    </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);" id="copyright">
+                © 2024 Copyright:
+             <a class="text-reset fw-bold" href="https://healthcare.com/">healthcare.com</a>
+            </div>
+
+</footer>
+
+</body>
+</html>

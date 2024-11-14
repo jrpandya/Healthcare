@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[feed]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Name] VARCHAR(MAX) NOT NULL, 
+    [Email] VARCHAR(MAX) NOT NULL, 
+    [Subject] VARCHAR(MAX) NOT NULL, 
+    [Message] VARCHAR(MAX) NOT NULL
+)
